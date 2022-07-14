@@ -42,7 +42,7 @@ const animaux = [
 ];
 
 
-
+const [canard, chat, lion, mouton] = animaux;
 
 
 
