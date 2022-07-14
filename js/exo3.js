@@ -65,12 +65,6 @@ const allowedUsers = users.filter( user => (user.age >= 18 && user.cash >= 20) |
 console.log(allowedUsers);
 
 
-
-
-
-
-
-
 /*
  * Tests
  */
