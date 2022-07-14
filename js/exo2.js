@@ -44,7 +44,7 @@ const data = [
   },
 ];
 
-const buildNewData = (element) => {
+const characters = data.map(buildNewData = (element) => {
   const name = element.firstname + ' ' + element.lastname;
   let young = false;
   if (element.age < 50) {
@@ -54,20 +54,9 @@ const buildNewData = (element) => {
     name,
     young,
   };
-};
-
-const characters = data.map(buildNewData);
+});
 
 console.log(characters);
-
-
-
-
-
-
-
-
-
 
 
 

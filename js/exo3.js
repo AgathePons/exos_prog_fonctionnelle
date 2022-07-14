@@ -60,9 +60,9 @@ const users = [
   },
 ];
 
-const allowedUsers = users;
+const allowedUsers = users.filter( user => (user.age >= 18 && user.cash >= 20) || user.cash >= 500);
 
-
+console.log(allowedUsers);
 
 
 
