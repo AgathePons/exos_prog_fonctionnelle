@@ -20,3 +20,15 @@ Notions
 
 const whiteButton = document.getElementById('white');
 const pinkButton = document.getElementById('pink');
+const buttons = document.getElementsByTagName('button');
+
+const applyColor = (color) => {
+  return function () {
+    for (const button of buttons) { button.className = '' }
+    this.className = 'selected';
+    document.body.style.backgroundColor = color;
+  }
+}
+
+whiteButton.addEventListener('click', applyColor('white'));
+pinkButton.addEventListener('click', applyColor('pink'));
