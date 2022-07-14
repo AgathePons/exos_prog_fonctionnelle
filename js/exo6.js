@@ -33,12 +33,6 @@ const { firstName: name, login } = user;
 
 
 
-
-
-
-
-
-
 /*
  * Tests
 

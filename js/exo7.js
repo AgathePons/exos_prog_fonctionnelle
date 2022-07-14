@@ -25,3 +25,8 @@ const user = {
   lang: 'fr',
 };
 
+const sayHelloToUser = ({ firstName, lastName }) => {
+  console.log(`Hello ${firstName} ${lastName}`);
+};
+
+sayHelloToUser(user);
