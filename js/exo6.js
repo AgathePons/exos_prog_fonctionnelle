@@ -27,6 +27,9 @@ const user = {
   lang: 'fr',
 };
 
+const { firstName: name, login } = user;
+
+
 
 
 
