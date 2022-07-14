@@ -18,3 +18,12 @@ Notions
 */
 
 const items = ['Sunglasses', 'Suit', 'Business card', 'Jet ski'];
+const listUl = document.getElementById('result');
+
+const buildItem = (value) => {
+  const listLi = document.createElement('li');
+  listLi.innerText = value;
+  listUl.appendChild(listLi);
+};
+
+items.forEach(buildItem);
