@@ -36,28 +36,29 @@ fruits2.forEach(direLeFruit);
  * Avec let, on a un instantané. On parle de portée de variable. Même si après, la valeur de index change, on a pris la valeur de index à un instant T.
  * Le fait de déclarer une fonction accédant à des variables, capture et fige la valeur de ces variables au moment où la fonction est appelée : C'est la closure
  */
-for (let index = 0; index < fruits.length; index++ ) {
+
+/* for (let index = 0; index < fruits.length; index++ ) {
   setTimeout(function() {
     console.log(index);
     console.log('je mange un fruit :', fruits[index]);
   }, 3000 * (index + 1));
-}
+} */
 
 /**
  * Si on sort la fonction de callback, ça passe avec un var
  * Le fait d'appeler une fonction, ça créer un scope, et ça prend un instantané, donc ça marche
  */
 
-const afficheFruit = (indexFruit) => {
+/* const afficheFruit = (indexFruit) => {
   setTimeout(function() {
-    console.log(index);
-    console.log('je mange un fruit :', fruits[index]);
-  }, 3000 * (index + 1));
+    console.log(indexFruit);
+    console.log('je re-mange un fruit :', fruits[indexFruit]);
+  }, 3000 * (indexFruit + 1));
 };
 
 for (var index = 0; index < fruits.length; index++ ) {
   afficheFruit(index);
-}
+} */
 
 /**
  * Autre exemple de closure
@@ -81,3 +82,27 @@ const direBonjourEnEn = direBonjour('en');
 
 direBonjourEnFr('Agathe');
 direBonjourEnEn('Agatha');
+
+/**
+ * Le Map() : Créer un nouveau tableau en faisant une transformation sur chaque element du tableau d'origine
+ * Pour chaque element, on appel la fonction de callback
+ * Le forEach est utile pour exécuter qqch à chaque élément, mais ne stock rien, si on fait :
+ * const resultat = fruits.froEach( fruit => return fruit + ' pourri(e)' );
+ * (return implicite, pas la peine de mettre entre accolade, si on veut faire un return implicite d'un objet,
+ * pour pas que js interprète les accolades de l'objet comme les accolades de la fonction, on met l'objet entre ())
+ * Si on essaie de logger resultat, ça enverra undefined alors que le map il renvoie un nouveau tableau
+ * Par contre si on met pas de return dans le map, on aura un nouveau tableau de undefined
+ * 
+ * On a accès a d'autres paramètres, on peut utiliser l'index en 2è paramètre, on peut en 3è récupérer tout le tableau
+ */
+
+const fruitsPourris = fruits.map( (fruit, index) => {
+  const fruitPourri = fruit + ' pourri(e)';
+  if (index % 2 === 0) {
+    return fruitPourri.toUpperCase();
+  } else {
+    return fruitPourri;
+  }
+});
+
+console.log(fruitsPourris);
