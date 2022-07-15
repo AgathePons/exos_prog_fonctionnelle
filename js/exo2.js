@@ -52,7 +52,11 @@ const characters = data.map(buildNewData = (element) => {
 });
 console.log(characters);
 
-
+// On pourrait l'écrire avec un return implicite
+console.log(data.map( character => ({
+  name: `${character.firstname} ${character.lastname}`,
+  young: character.age < 50,
+}) ));
 
 
 /*
