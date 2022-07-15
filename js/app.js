@@ -58,3 +58,26 @@ const afficheFruit = (indexFruit) => {
 for (var index = 0; index < fruits.length; index++ ) {
   afficheFruit(index);
 }
+
+/**
+ * Autre exemple de closure
+ * Quand on a déclaré la fonction dans le return, elle a accès aux variables qui sont au-dessus, donc à lang.
+ * Dans la fonction du return, on a capturé l'environnement d'appel de la fonction dans laquelle elle est appelée
+ */
+function direBonjour (lang) {
+  if (lang === 'fr') {
+    return function(prenom) {
+      console.log('Bonjour', prenom, 'ta langue :', lang);
+    };
+  } else if (lang === 'en') {
+    return function(prenom) {
+      console.log('Hello', prenom, 'your language:', lang);
+    };
+  }
+}
+
+const direBonjourEnFr = direBonjour('fr');
+const direBonjourEnEn = direBonjour('en');
+
+direBonjourEnFr('Agathe');
+direBonjourEnEn('Agatha');
