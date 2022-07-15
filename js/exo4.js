@@ -43,7 +43,7 @@ const data = [
 ];
 
 function findUser(login, users) {
-  return users.find((user) => user.login === login)
+  return users.find( user => user.login === login)
 }
 
 
