@@ -45,17 +45,11 @@ const data = [
 ];
 
 const characters = data.map(buildNewData = (element) => {
-  const name = element.firstname + ' ' + element.lastname;
-  let young = false;
-  if (element.age < 50) {
-    young = true;
-  }
   return {
-    name,
-    young,
+    name: `${element.firstname} ${element.lastname}`,
+    young: element.age < 50,
   };
 });
-
 console.log(characters);
 
 
