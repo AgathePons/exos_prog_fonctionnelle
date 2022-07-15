@@ -22,7 +22,7 @@ const listUl = document.getElementById('result');
 
 const buildItem = (value) => {
   const listLi = document.createElement('li');
-  listLi.innerText = value;
+  listLi.textContent = value;
   listUl.appendChild(listLi);
 };
 
