@@ -30,3 +30,21 @@ const sayHelloToUser = ({ firstName, lastName }) => {
 };
 
 sayHelloToUser(user);
+
+// Autre exemple pour aller plus loin
+
+const someGuy = {
+  firstName: 'Gilles',
+  lastName: 'Durant',
+  family: {
+    wife: 'Jacqueline',
+    firstChild: 'Kyllian',
+    secondChild: 'Lilou',
+  },
+};
+
+const sayHelloToSomeGuy = ({firstName, lastName, family: {wife, secondChild}}) => {
+  console.log(`Hello ${firstName} ${lastName}! How is your dear wife ${wife} ? Oh, and your little ${secondChild}, she grows?`);
+}
+
+sayHelloToSomeGuy(someGuy);
