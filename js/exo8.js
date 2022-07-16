@@ -32,3 +32,34 @@ const applyColor = (color) => {
 
 whiteButton.addEventListener('click', applyColor('white'));
 pinkButton.addEventListener('click', applyColor('pink'));
+
+// Autre exemple
+
+// ici, on est obligé de recontruire une usine pour chaque voiture, hors on aurait pu utiliser la même pour Gaston et Kelly
+const creerUsine = (constructeur, localisation, nbEmployes) => {
+  // construct a factory
+  // big code here
+  console.log(`Une usine ${constructeur} a été crée à ${localisation}, elle a ${nbEmployes} employés.`);
+  function creerVoiture(modele, couleur, motorisation) {
+    console.log('clic bam boum je fabrique une voiture');
+    return {
+      modele,
+      couleur,
+      motorisation,
+    }
+  }
+
+  return creerVoiture;
+};
+
+const voitureDeGaston = creerUsine('Renault', 'Toulouse', 300)('Twingo', 'Jaune canari', 'hydrogène');
+const voitureDeKelly = creerUsine('Renault', 'Toulouse', 300)('Twingo', 'Antracite', 'pipi de chat');
+
+// On peut faire la chose suivante, on construit une usine à Lyon :
+const usineDeToulouse = creerUsine('Renault', 'Lyon', 300);
+
+const voitureDeJulie = usineDeToulouse('Twingo', 'Deep Purple', 'huile de friture');
+console.log(voitureDeJulie);
+
+const voitureDeJulien = usineDeToulouse('Twingo', 'Clean white', 'beurre demi-sel');
+console.log(voitureDeJulien);
